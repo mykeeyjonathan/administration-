@@ -17,7 +17,7 @@ public class AdminController {
     private AdminService adminService;
 
     //building create Administration Rest API
-    @PostMapping("{id}")
+    @PostMapping
     public ResponseEntity<Administration> createAdministration (@RequestBody Administration administration){
         Administration savedAdminstration = adminService.createAdministration(administration);
         return new ResponseEntity<>(savedAdminstration, HttpStatus.CREATED);
@@ -33,7 +33,7 @@ public class AdminController {
 
     //Build Get All Administration REST API
     // http://localhost:8080/api/administration
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Administration>> getAllAdministration(){
         List<Administration> administrations = adminService.getAllAdministration();
         return new ResponseEntity<>(administrations, HttpStatus.OK);
