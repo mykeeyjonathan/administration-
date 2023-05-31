@@ -43,7 +43,7 @@ public class AdminController {
     @PutMapping("{id}")
     // http://localhost:8080/api/administration/1
     public ResponseEntity<Administration> updateAdministration(@PathVariable("id") Long administrationId, @RequestBody Administration administration){
-        administration.setId(administrationId);
+
         Administration updatedAdministration = adminService.updateAdministration(administration);
         return new ResponseEntity<>(updatedAdministration, HttpStatus.OK);
     }

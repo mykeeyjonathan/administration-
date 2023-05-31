@@ -11,11 +11,11 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class AdminServiceImpl implements AdminService{
-    private AdminRespository adminRespository;
     @Override
     public Administration createAdministration(Administration administration) {
         return adminRespository.save(administration);
-    }
+    }    private AdminRespository adminRespository;
+
 
     @Override
     public Administration getAdministrationById(Long administrationId) {
